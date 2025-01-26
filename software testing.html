@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Path IT Solutions</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+.whatsapp-icon {
+        position: fixed;
+        top: 50%;
+        /* Default vertical center */
+        left: 20px;
+        /* Default left position */
+        transform: translateY(-50%);
+        /* Center vertically */
+        width: 60px;
+        height: 60px;
+        z-index: 1000;
+        border-radius: 50%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        cursor: grab;
+        /* Indicate draggable functionality */
+        transition: transform 0.2s ease;
+    }
+
+    /* Hover Effect */
+    .whatsapp-icon:hover {
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Icon Image Styling */
+    .whatsapp-icon img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    /* Responsive for Mobile */
+    @media screen and (max-width: 768px) {
+        .whatsapp-icon {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .container-1 {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(238, 6, 6, 0.1);
+            padding: 40px;
+            margin-top: 80px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .content h1 {
+            color: #800040;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image img {
+            max-width:105%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .container-1 {
+                flex-direction: column;
+            }
+
+            .image {
+                order: -1;
+                margin-bottom: 20px;
+            }
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 100%;
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .card h5 {
+            color: #800040;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 48%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+        }
+</style>
+
+<body>
+    <!-- WhatsApp Icon -->
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/8618151740" target="_blank" class="whatsapp-icon" id="draggable-icon"
+        title="Chat with us on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <script>
+        // Make the WhatsApp icon draggable
+const icon = document.getElementById("draggable-icon");
+
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+icon.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    offsetX = e.clientX - icon.getBoundingClientRect().left;
+    offsetY = e.clientY - icon.getBoundingClientRect().top;
+    icon.style.cursor = "grabbing"; // Change cursor on drag
+});
+
+document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+        const newX = e.clientX - offsetX;
+        const newY = e.clientY - offsetY;
+
+        // Set new position for the icon
+        icon.style.left = `${newX}px`;
+        icon.style.top = `${newY}px`;
+    }
+});
+
+document.addEventListener("mouseup", () => {
+    isDragging = false;
+    icon.style.cursor = "grab"; // Reset cursor after drag
+});
+
+    </script>
+ <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a class="navbar-brand" href="index.html"><img src="logo.png" alt="Logo"
+            style="height: 50px; width: 150px;border-radius: 5px; "></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <!-- Home -->
+            <li class="nav-item" style="margin-right: 50px;">
+                <a class="nav-link" href="index.html"><b style="color: white;">Home</b></a>
+            </li>
+    
+            <li class="nav-item dropdown" style="margin-right: 50px;">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="color: white;"
+                >
+                    <b>Job Guaranteed Courses</b>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                        <a class="dropdown-item" href="java fullstack.html">Java Developer</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="software testing.html">Software Testing</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="devops.html">DevOps</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="sap.html">SAP</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="networking.html">Networking</a>
+                    </li>
+                </ul>
+            </li>
+    
+            <!-- About Us -->
+            <li class="nav-item" style="margin-right: 50px;">
+                <a class="nav-link" href="about.html"><b style="color: white;">About Us</b></a>
+            </li>
+    
+            <!-- Contact Us -->
+            <li class="nav-item" style="margin-right: 50px;">
+                <a class="nav-link" href="contact.html"><b style="color: white;">Contact Us</b></a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+  
+
+  <div class="container-1">
+    <div class="content">
+        <h1>Software Testing Training</h1>
+        <p>
+            Who Should Enroll in This Course?
+
+This course is ideal for:
+
+
+Manual Testers and Non-Programming Professionals: Tailored for those who have experience in manual testing or have minimal programming knowledge but are eager to dive into automation.
+Software Engineers: Suited for software engineers interested in expanding their expertise into mobile technology and mobile app testing.
+Freshers, Graduates, and Software Testers: A great fit for recent graduates or entry-level testers aiming to boost their skills in the software testing industry.
+        </p>
+        <p>
+           This course combines practical, industry-relevant skills with hands-on experience, making it easy for freshers to transition into IT projects confidently.
+            Comprehensive Testing Knowledge: Gain essential testing skills that meet the entry-level requirements for most job interviews, giving you a competitive edge.
+            Job-Ready from Day One: This program empowers freshers to start working on testing projects immediately upon joining, equipped with the skills and confidence to make a strong impact.        </p>
+    </div>
+    <div class="image">
+        <img src="software testing.jpeg" alt="About Us">
+    </div>
+</div>
+
+
+
+<div class="container" style="margin-top: 80px;">
+    <h1 class="text-center mb-4"><b>Our Services</b></h1>
+    <div class="row">
+        
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <p><strong>Domain Name:</strong> IT Services</p>
+                    <p><strong>Technology Requirement:</strong> ECE / EEE / CSE / IT</p>
+                    <p><strong>Eligibility:</strong> 70% and above</p>
+                    <p><strong>Passout Year:</strong> 2023 / 2024</p>
+                    <p><strong>Role:</strong> Software Engineer</p>
+                    <p><strong>Skills:</strong></p>
+                    <ul>
+                        <li>Java 2+ and 3+</li>
+                        <li>Mainframes 3+</li>
+                        <li>Dot NET 3+</li>
+                        <li>Testing 3+</li>
+                    </ul>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Here</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <!-- <h5 class="card-title">Tech Mahindra</h5> -->
+                    <p><strong>Domain Name:</strong> IT Services</p>
+                    <p><strong>Technology Requirement:</strong> ECE / EEE / CSE / IT</p>
+                    <p><strong>Eligibility:</strong> 70% and above</p>
+                    <p><strong>Passout Year:</strong> 2023 / 2024</p>
+                    <p><strong>Role:</strong> Software Engineer</p>
+                    <p><strong>Skills:</strong></p>
+                    <ul>
+                        <li>Java / .NET</li>
+                        <li>Mobile Testing</li>
+                        <li>C++ / Python</li>
+                        <li>Android / iOS Platform SDET</li>
+                    </ul>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Here</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <!-- <h5 class="card-title">Tech Mahindra</h5> -->
+                    <p><strong>Domain Name:</strong> IT Services</p>
+                    <p><strong>Technology Requirement:</strong> Mechanical Engineering</p>
+                    <p><strong>Eligibility:</strong> 65% and above</p>
+                    <p><strong>Passout Year:</strong> 2023 / 2024</p>
+                    <p><strong>Role:</strong> Software Engineer</p>
+                    <p><strong>Skills:</strong></p>
+                    <ul>
+                        <li>Java / .NET</li>
+                        <li>Mobile Testing</li>
+                        <li>C++ / Python</li>
+                        <li>Android / iOS Platform SDET</li>
+                    </ul>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Here</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <p><strong>Domain Name:</strong> IT Services</p>
+                    <p><strong>Role:</strong> Associate Support Engineer</p>
+                    <p><strong>Eligibility:</strong> 
+                        <ul>
+                            <li>BSc/MSc,BCA/MCA in Computer Science or related fields 2022 to 2025</li>
+                            
+                            <li>BE/BTech in CSE, IT, AI, DS, Networking, ECE, EEE 2022 to 2025</li>
+                        </ul>
+                    </p>
+                    <p><strong>Skills Required:</strong></p>
+                    <ul>
+                        <li>Basic understanding of computer systems, operating systems, and networking concepts</li>
+                    </ul>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <p><strong>Domain Name:</strong> IT Services</p>
+                    <!-- <h5 class="card-title">Ison Xperiences</h5> -->
+                    <p><strong>Role:</strong> Chat and Email Support</p>
+                    <p><strong>Location:</strong> Dubai</p>
+                    <p><strong>Salary:</strong> 35K TH</p>
+                    <p><strong>Benefits:</strong></p>
+                    <ul>
+                        <li>Accommodation</li>
+                        <li>Food</li>
+                        <li>Travel</li>
+                        <li>Visa</li>
+                    </ul>
+                    <p><strong>Open Positions:</strong> 100</p>
+                    <p><strong>Eligibility:</strong> Freshers</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <p><strong>Domain Name:</strong> IT Services</p>
+                    <!-- <h5 class="card-title">Accenture Off Campus Drive</h5> -->
+                    <p><strong>Role:</strong> Associate Software Engineer</p>
+                    <p><strong>Eligibility:</strong></p>
+                    <ul>
+                        <li>BSc, BCom, MCom, MBA, MCA, MSc</li>
+                        <li>10th, 12th, and Degree: 65% or above</li>
+                    </ul>
+                    <p><strong>Batch:</strong> 2020 to 2024</p>
+                    <p><strong>Salary:</strong> INR 3.6 LPA</p>
+                    <p><strong>Location:</strong> Bangalore, Hyderabad, Pune, Mumbai, Chennai, Gurugram, Kolkata, Indore, Jaipur, Coimbatore, Ahmedabad, Bhubaneswar</p>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 7 -->
+       
+        
+        <!-- Card 8 -->
+        
+        
+        <!-- Card 9 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <p><strong>Domain:</strong> IT Services</p>
+                    <p><strong>Preferred Candidates for Technologies:</strong></p>
+                    <ul>
+                        <li>SAP SD, MM, FICO, GRC, BASIS, ABAP</li>
+                        <li>JAVA, Spring Boot, React Js, Node Js, Angular</li>
+                        <li>Salesforce, MuleSoft, Tosca, Automated Testing</li>
+                       
+                    </ul>
+                    <p><strong>Experience:</strong> 3+ / 4+ / 5+ years</p>
+                    <p><strong>Location:</strong> Pan India</p>
+                    <p><strong>Package:</strong> 30% to 100% hike based on current CTC</p>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Here</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 10 -->
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <p><strong>Domain:</strong> IT Services</p>
+                    <p><strong>Role:</strong> Network Engineer</p>
+                    <p><strong>Education:</strong> BTech/BE (CSIT/Circuit Branches only), MCA</p>
+                    <p><strong>Batch:</strong> 2024 Passout</p>
+                    <p><strong>Location:</strong> Gurgaon</p>
+                    <p><strong>CTC:</strong> 4.25 LPA</p>
+                    <p><strong>Gender:</strong> Both Boys and Girls</p>
+                    <p><strong>Requirement:</strong> Immediate</p>
+                    <p><strong>Interested?</strong> Please contact me</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Here</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <p><strong>Domain:</strong> SAP HANA DBA</p>
+                    <p><strong>Experience Required:</strong> 3+ Years</p>
+                    <p><strong>Location:</strong> Bangalore & Hyderabad</p>
+                    <p><strong>Package:</strong> 30% to 70% hike</p>
+                    <p><strong>Mode:</strong> Work from Office (All 5 Days)</p>
+                    <p><strong>Shift:</strong> Rotational Shifts / 24/7</p>
+                    <p><strong>Notice Period:</strong> Immediate to 15 Days</p>
+                    <p><strong>Process:</strong> Panel Management</p>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Here</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <p><strong>Domain:</strong> SAP BTP</p>
+                    <p><strong>Experience Required:</strong> 4 to 6 Years</p>
+                    <p><strong>Role:</strong> L2 - Consultant</p>
+                    <p><strong>Package:</strong> Up to 15 LPA</p>
+                    <p><strong>Location:</strong> Hyderabad, Bangalore, Mumbai, Pune, Chennai</p>
+                    <p><strong>Mode:</strong> Work from Office (All 5 Days)</p>
+                    <p><strong>Working Hours:</strong> 10 AM to 7 PM</p>
+                    
+                    <p><strong>Skills Required:</strong> BTP with S4 HANA and Public Cloud Implementation Projects</p>
+                    
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Here</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <p><strong>Domain:</strong> SAP Security & GRC - Risk & Audit Management</p>
+                    <p><strong>Experience Required:</strong> 4 to 6 Years</p>
+                    <p><strong>Role:</strong> L2 - Consultant</p>
+                    <p><strong>Package:</strong> 12 LPA</p>
+                    <p><strong>Location:</strong> Hyderabad, Bangalore, Mumbai, Pune, Chennai</p>
+                    <p><strong>Mode:</strong> Work from Office (All 5 Days)</p>
+                    <p><strong>Working Hours:</strong> 10 AM to 7 PM</p>
+                    
+                    <p><strong>Skills Required:</strong> Security & GRC with Risk & Audit Management</p>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Here</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <p><strong>Domain:</strong> SAP TRM/CASH Management</p>
+                    <p><strong>Experience Required:</strong> 4 to 7 Years</p>
+                    <p><strong>Role:</strong> L2 - Consultant</p>
+                    <p><strong>Package:</strong> 12 LPA</p>
+                    <p><strong>Location:</strong> Hyderabad, Bangalore, Chennai, Pune, Mumbai</p>
+                    <p><strong>Mode:</strong> Work from Office (All 5 Days)</p>
+                    <p><strong>Working Hours:</strong> 10 AM to 7 PM</p>
+                    
+                    <p><strong>Skills Required:</strong> SAP TRM, S4 HANA</p>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelnDLmOmklt94QxmRJHB-LkXhBmvtODAIPrgzLB3ELwV5Zyw/viewform" class="btn btn-primary">Apply Here</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Add remaining 5 cards similarly -->
+        <!-- Card 11 to Card 15 -->
+        <!-- Adjust as needed -->
+    </div>
+</div>
+    
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="logo.png" alt="Career Comfort Logo" class="logo">
+          <p>
+            India's best Job Consultancy and Recruitment Agency offering both work-from-home and office
+            jobs. Find the best jobs for yourself or hire employees for your company with the help of our
+            professionals.
+          </p>
+        </div>
+        <div class="col-md-4" style="padding-left: 7%;">
+            <h5>Job Guaranteed Courses</h5>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-check"></i> Java Developer </li>
+                <li><i class="fas fa-check"></i> Software Testing </li>
+                <li><i class="fas fa-check"></i> DevOps </li>
+                <li><i class="fas fa-check"></i> SAP </li>
+                <li><i class="fas fa-check"></i> Networking </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-envelope"></i> <a href="mailto:careers@futurepathitsolution.com">careers@futurepathitsolution.com</a></li>
+            <li><i class="fas fa-phone"></i> +91 86181 51740
+            </li>
+            <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/9Mn5bxyLG1hCv3c76">No
+                112, 1st floor, Shirdi Sai Nagar, RK Hegde Nagar, Bengaluru, Karnataka, India,
+                560077.</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <div class="social-icons">
+
+
+            <a href="#" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+            <a href="#" class="fab fa-instagram"
+              aria-label="Instagram"></a>
+
+            <a href="https://wa.me/8618151740" class="fab fa-whatsapp" aria-label="WhatsApp"></a>
+            <a href="mailto:m8970652@gmail.com" class="fas fa-envelope" aria-label="Gmail"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <p>&copy; 2025 Future Path IT Solutions. All rights reserved.</p>
+    </div>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Path IT Solutions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* styles.css */
+
+    .container-1 {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #fff;
+      
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        overflow: hidden;
+        padding: 40px;
+
+    }
+
+    .content {
+        flex: 1;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .content h1 {
+        color: #800040;
+        margin-bottom: 15px;
+    }
+
+    .content p {
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+    .image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+        .container-1 {
+            flex-direction: column;
+        }
+
+        .image {
+            order: -1;
+            padding: 10px;
+        }
+
+        .content {
+            padding: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .content h1 {
+            font-size: 24px;
+        }
+
+        .content p {
+            font-size: 14px;
+        }
+    }
+
+    .main-container {
+        background-color: #e8e8e8;
+       
+        padding: 40px 20px;
+        
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 80px;
+    }
+
+    .sections {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: space-around;
+    }
+
+    .section {
+       
+        border-radius: 8px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+    }
+
+    .icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+        color: #800040;
+        margin: 15px 0;
+        margin-bottom: 30px;
+    }
+
+    .section p {
+        font-size: 17px;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .sections {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section {
+            width: 90%;
+        }
+
+        .main-heading {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .main-heading {
+            font-size: 1.8rem;
+        }
+
+        .section h2 {
+            font-size: 1.2rem;
+        }
+
+        .section p {
+            font-size: 0.9rem;
+        }
+    }
+    /* WhatsApp Icon Base */
+    /* WhatsApp Icon Base */
+    /* WhatsApp Icon Base */
+    .whatsapp-icon {
+        position: fixed;
+        top: 50%;
+        /* Default vertical center */
+        left: 20px;
+        /* Default left position */
+        transform: translateY(-50%);
+        /* Center vertically */
+        width: 60px;
+        height: 60px;
+        z-index: 1000;
+        border-radius: 50%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        cursor: grab;
+        /* Indicate draggable functionality */
+        transition: transform 0.2s ease;
+    }
+
+    /* Hover Effect */
+    .whatsapp-icon:hover {
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Icon Image Styling */
+    .whatsapp-icon img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    /* Responsive for Mobile */
+    @media screen and (max-width: 768px) {
+        .whatsapp-icon {
+            width: 50px;
+            height: 50px;
+        }
+    }
+</style>
+
+<body>
+    <!-- WhatsApp Icon -->
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/8618151740" target="_blank" class="whatsapp-icon" id="draggable-icon"
+        title="Chat with us on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <script>
+        // Make the WhatsApp icon draggable
+const icon = document.getElementById("draggable-icon");
+
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+icon.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    offsetX = e.clientX - icon.getBoundingClientRect().left;
+    offsetY = e.clientY - icon.getBoundingClientRect().top;
+    icon.style.cursor = "grabbing"; // Change cursor on drag
+});
+
+document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+        const newX = e.clientX - offsetX;
+        const newY = e.clientY - offsetY;
+
+        // Set new position for the icon
+        icon.style.left = `${newX}px`;
+        icon.style.top = `${newY}px`;
+    }
+});
+
+document.addEventListener("mouseup", () => {
+    isDragging = false;
+    icon.style.cursor = "grab"; // Reset cursor after drag
+});
+
+    </script>
+ <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a class="navbar-brand" href="index.html"><img src="logo.png" alt="Logo"
+            style="height: 50px; width: 150px;border-radius: 5px; "></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <!-- Home -->
+            <li class="nav-item" style="margin-right: 50px;">
+                <a class="nav-link" href="index.html"><b style="color: white;">Home</b></a>
+            </li>
+    
+            <li class="nav-item dropdown" style="margin-right: 50px;">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="color: white;"
+                >
+                    <b>Job Guaranteed Courses</b>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                        <a class="dropdown-item" href="java fullstack.html">Java Developer</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="software testing.html">Software Testing</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="devops.html">DevOps</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="sap.html">SAP</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="networking.html">Networking</a>
+                    </li>
+                </ul>
+            </li>
+    
+            <!-- About Us -->
+            <li class="nav-item" style="margin-right: 50px;">
+                <a class="nav-link" href="about.html"><b style="color: white;">About Us</b></a>
+            </li>
+    
+            <!-- Contact Us -->
+            <li class="nav-item" style="margin-right: 50px;">
+                <a class="nav-link" href="contact.html"><b style="color: white;">Contact Us</b></a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+    <br><br><br>
+
+    <div class="container-1">
+        <div class="content">
+            <h1>About Us</h1>
+            <p>
+                Future Path IT Solutions is a leading consulting firm that helps businesses unlock their full potential. We work with
+                clients across a range of industries to provide tailored solutions that drive growth, improve
+                efficiency, and achieve lasting results.
+            </p>
+            <p>
+                As a company, we are committed to providing the best possible service to our clients, which is why we
+                take pride in our work. The reputation we've built over the years for excellence is important to us, and
+                we're dedicated to building long-term partnerships that will generate sustainable success for our
+                clients. No matter if you're looking to expand your market share, optimize your operations, or pursue
+                new opportunities, we're here to help you achieve your objectives. Please contact us today if you would
+                like to learn more about how we can help you with your career.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://www.mindloads.in/images/hero/about.png" alt="Team" />
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+    <div class="main-container">
+        <h1 class="main-heading"><b>Why Choose Our Institution</b></h1>
+        <div class="sections">
+            <div class="section">
+                <div class="icon">
+                    <img src="http://cdn.onlinewebfonts.com/svg/img_565478.png" alt="Vision Icon">
+                </div>
+                <h2>Vision</h2>
+                <p>
+                    To be a global benchmark in shaping people’s professional lives, through a ‘win-win’ approach thus creating an environment in which all stakeholders are empowered and enriched.    </p>
+            </div>
+            <div class="section">
+                <div class="icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1628/1628441.png" alt="Mission Icon">
+                </div>
+                <h2>Mission</h2>
+                <p>
+                    Inclined towards having a global reach in all major cities, providing our patrons the experience, business intelligence to attract and retain talent. Focusing on building lasting relationships across levels, industries and geographies; enabling us becoming a preferred sourcing partner.  </p>
+            </div>
+            <div class="section">
+                <div class="icon">
+                    <img src="https://www.freeiconspng.com/thumbs/book-icon/book-stack-icon--icon-search-engine-16.png" alt="Quality Policy Icon">
+                </div>
+                <h2>Quality Policy</h2>
+                <p>
+                    We aTreat every requirement and candidate equally. Ensure that we provide accurate and timely services to all our customers. We stand committed to bring about a positive change in the recruitment function through an innovative and proactive approach.
+                </p>
+            </div>
+        </div>
+    </div>
+
+  <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="logo.png" alt="Career Comfort Logo" class="logo">
+                    <p>
+                        India's best Job Consultancy and Recruitment Agency offering both work-from-home and office
+                        jobs. Find the best jobs for yourself or hire employees for your company with the help of our
+                        professionals.
+                    </p>
+                </div>
+                <div class="col-md-4" style="padding-left: 7%;">
+                    <h5>Job Guaranteed Courses</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check"></i> Java Developer </li>
+                        <li><i class="fas fa-check"></i> Software Testing </li>
+                        <li><i class="fas fa-check"></i> DevOps </li>
+                        <li><i class="fas fa-check"></i> SAP </li>
+                        <li><i class="fas fa-check"></i> Networking </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope"></i> <a
+                                href="mailto:careers@futurepathitsolution.com">careers@futurepathitsolution.com</a></li>
+                        <li><i class="fas fa-phone"></i> +91 86181 51740
+                        </li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/9Mn5bxyLG1hCv3c76">No
+                                112, 1st floor, Shirdi Sai Nagar, RK Hegde Nagar, Bengaluru, Karnataka, India,
+                                560077.</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+
+
+                        <a href="#" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+                        <a href="#" class="fab fa-instagram"
+                            aria-label="Instagram"></a>
+
+                        <a href="https://wa.me/8618151740" class="fab fa-whatsapp" aria-label="WhatsApp"></a>
+                        <a href="mailto:m8970652@gmail.com" class="fas fa-envelope" aria-label="Gmail"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <p>&copy; 2025 Future Path IT Solutions. All rights reserved.</p>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

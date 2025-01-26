@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Path IT Solutions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <link rel="stylesheet" href="css/hero-slider.css">
+    <link rel="stylesheet" href="css/owl-carousel.css">
+</head>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 50px;
+        flex-wrap: wrap;
+    }
+    
+
+
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: darkorange;
+}
+
+.success-message {
+    margin-top: 15px;
+    color: green;
+    font-size: 14px;
+    display: none; /* Initially hidden */
+}
+
+
+    .bannerclass {
+        padding-top: 80px;
+        overflow: hidden;
+        width: 100%;
+        height: 700px; 
+        position: relative;
+    }
+
+    .banner-wrapper {
+        display: flex;
+        transition: transform 1s ease-in-out;
+    }
+
+    .boom1 {
+        flex: 1 0 100%; 
+        height: auto;
+        width: 100%;
+    }
+
+    .boom1 img {
+        display: block;
+        width: 100%;
+    }
+
+    /* Individual box styling */
+    .box {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        transform: translateX(-100%);
+        animation: slideInLeft 1s ease-out forwards;
+        box-sizing: border-box;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:nth-child(2) {
+        transform: translateX(100%);
+        animation: slideInRight 1s ease-out forwards;
+    }
+
+    .box:hover {
+        transform: scale(1.05) translateX(0);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .icon {
+        font-size: 50px;
+        color: #851552;
+        margin-bottom: 10px;
+    }
+
+    .box h3 {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #333;
+    }
+
+    .box p {
+        font-size: 14px;
+        color: #555;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #851552;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #a81e6a;
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .box {
+            flex: 1 1 100%;
+            max-width: 100%;
+            animation: slideInLeft 2s ease-out forwards;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .icon {
+            font-size: 40px;
+        }
+
+        .box h3 {
+            font-size: 16px;
+        }
+
+        .box p {
+            font-size: 12px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            font-size: 12px;
+        }
+    }
+
+    @keyframes slideInLeft {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInRight {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .main-container {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .image-container {
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translateX(-100%);
+        animation: slideInLeft 1s ease-out forwards;
+    }
+
+    .text-container {
+        width: 50%;
+        padding: 20px;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    h2 {
+        font-size: 24px;
+        color: #000000;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-family: "Inter";
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .read-more-btn {
+        padding: 10px 20px;
+        background-color: #851552;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+        background-color: #2f282b;
+    }
+
+    @media (max-width: 768px) {
+        .main-container {
+            flex-direction: column;
+            height: auto;
+            /* Let content adjust the height */
+        }
+
+        .image-container,
+        .text-container {
+            width: 100%;
+
+        }
+
+        .text-container p {
+            font-size: 16px;
+
+        }
+
+        .navbar-nav {
+            background-color: #851552;
+        }
+    }
+
+    .container-1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        animation: slideInLeft 5s ease-out forwards;
+        box-sizing: border-box;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container-2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        animation: slideInRight 5s ease-out forwards;
+        box-sizing: border-box;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    /* Card styling */
+    .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 250px;
+
+        padding: 0px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .card img {
+        width: 100%;
+        height: 160px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    .card p {
+        font-size: 18px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    /* Hover effect for cards */
+    .card:hover {
+        transform: scale(1.05);
+        /* Slight zoom effect */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .card {
+            width: 250px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .card {
+            width: 250px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+    }
+
+    .bye-1 {
+        animation: slideInRight 2s ease-out forwards;
+        box-sizing: border-box;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bye-2 {
+        animation: slideInLeft 2s ease-out forwards;
+        box-sizing: border-box;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hero-container {
+        position: relative;
+        height: 750px;
+        overflow: hidden;
+        color: rgb(0, 0, 0);
+    }
+
+    .hero-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        animation: slideshow 25s infinite;
+        z-index: -1;
+    }
+
+    /* Define the keyframes for the slideshow animation */
+    @keyframes slideshow {
+        0% {
+            background-image: url(1.webp);
+            /* Show half the image width */
+        }
+
+        33% {
+            background-image: url(2.webp);
+        }
+
+        66% {
+            background-image: url(3.webp);
+        }
+
+        100% {
+            background-image: url(4.webp);
+        }
+    }
+
+
+
+    .overlay-text {
+        position: relative;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 10px;
+        z-index: 1;
+        /* Keeps text above background */
+    }
+
+
+    .overlay-text p {
+        width: 100%;
+    }
+
+    .btn {
+        text-decoration: none;
+        color: white;
+        background-color: #851552;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #b62173;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hero-container {
+            height: 750px;
+            /* Adjust height for extra small screens */
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .hero-container {
+            height: 750px;
+            /* Adjust height for extra small screens */
+        }
+
+    }
+
+
+    .container-3 {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 500px;
+        overflow: hidden;
+        padding-top: 50px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards-wrapper {
+        display: flex;
+        animation: scroll-left 50s linear infinite;
+    }
+
+    .card-1 {
+        flex: 0 0 30%;
+        /* Each card takes up 20% of the container's width */
+        margin: 10px;
+        height: 300px;
+        width: 400px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .card-1 img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .card-1 p {
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+
+    /* Adding duplicate cards for seamless infinite scroll */
+
+
+    .cards-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+    }
+
+    @media (max-width: 768px) {
+
+        /* Tablet View */
+        .container-3 {
+            padding: 10px;
+            padding-top: 50px;
+            height: auto;
+            /* Allow dynamic height */
+            overflow: hidden;
+            /* Hide any overflow */
+            height: 400px;
+        }
+
+        .cards-wrapper {
+            display: flex;
+            gap: 15px;
+            /* Space between cards */
+            animation: scroll-left 50s linear infinite;
+            width: max-content;
+            /* Allow the wrapper to expand to fit all cards */
+        }
+
+        .card-1 {
+            flex: 0 0 auto;
+            /* Prevent cards from shrinking */
+            margin: 0 auto;
+            /* Center cards */
+            width: 200px;
+            /* Adjust width for better visibility on smaller screens */
+            height: 260px;
+            /* Card height */
+        }
+
+        .card-1 img {
+            width: 200px;
+            /* Ensure images are responsive */
+            height: 200px;
+            /* Adjust image height */
+            object-fit: cover;
+            /* Maintain image proportions */
+        }
+
+        .card-1 p {
+            font-size: 14px;
+            /* Adjust font size */
+            padding: 8px;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        /* Mobile View */
+        .container-3 {
+            padding: 10px;
+            padding-top: 30px;
+            height: auto;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .cards-wrapper {
+            display: flex;
+            gap: 20px;
+            /* Space between cards */
+            animation: scroll-left 50s linear infinite;
+            /* Adjust animation speed */
+            width: max-content;
+            /* Allow all cards to fit */
+        }
+
+        .card-1 {
+            flex: 0 0 auto;
+            /* Prevent cards from shrinking */
+            margin: 0 auto;
+            width: 200px;
+            /* Cards take most of the screen width */
+            height: 260px;
+            /* Adjust card height for small screens */
+        }
+
+        .card-1 img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-1 p {
+            font-size: 12px;
+            /* Smaller text size for mobile */
+            padding: 5px;
+        }
+    }
+
+    /* WhatsApp Icon Base */
+    /* WhatsApp Icon Base */
+    /* WhatsApp Icon Base */
+    .whatsapp-icon {
+        position: fixed;
+        top: 50%;
+        /* Default vertical center */
+        left: 20px;
+        /* Default left position */
+        transform: translateY(-50%);
+        /* Center vertically */
+        width: 60px;
+        height: 60px;
+        z-index: 1000;
+        border-radius: 50%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        cursor: grab;
+        /* Indicate draggable functionality */
+        transition: transform 0.2s ease;
+    }
+
+    /* Hover Effect */
+    .whatsapp-icon:hover {
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    /* Icon Image Styling */
+    .whatsapp-icon img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    /* Responsive for Mobile */
+    @media screen and (max-width: 768px) {
+        .whatsapp-icon {
+            width: 50px;
+            height: 50px;
+        }
+    }
+        /* Add your CSS styles for the popup here */
+        .popup {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .popup-content {
+            background: white;
+            padding: 20px;
+            margin: 100px auto;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        .close-btn {
+            float: right;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style> 
+</head>
+<body>
+
+    <!-- WhatsApp Icon -->
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/8618151740" target="_blank" class="whatsapp-icon" id="draggable-icon"
+        title="Chat with us on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <script>
+        // Make the WhatsApp icon draggable
+        const icon = document.getElementById("draggable-icon");
+
+        let isDragging = false;
+        let offsetX = 0;
+        let offsetY = 0;
+
+        icon.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            offsetX = e.clientX - icon.getBoundingClientRect().left;
+            offsetY = e.clientY - icon.getBoundingClientRect().top;
+            icon.style.cursor = "grabbing"; // Change cursor on drag
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                const newX = e.clientX - offsetX;
+                const newY = e.clientY - offsetY;
+
+                // Set new position for the icon
+                icon.style.left = `${newX}px`;
+                icon.style.top = `${newY}px`;
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+            icon.style.cursor = "grab"; // Reset cursor after drag
+        });
+    </script>
+
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html"><img src="logo.png" alt="Logo"
+                style="height: 50px; width: 150px;border-radius: 5px; "></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <!-- Home -->
+                <li class="nav-item" style="margin-right: 50px;">
+                    <a class="nav-link" href="index.html"><b style="color: white;">Home</b></a>
+                </li>
+        
+                <li class="nav-item dropdown" style="margin-right: 50px;">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        style="color: white;"
+                    >
+                        <b>Job Guaranteed Courses</b>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="java fullstack.html">Java Developer</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="software testing.html">Software Testing</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="devops.html">DevOps</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="sap.html">SAP</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="networking.html">Networking</a>
+                        </li>
+                    </ul>
+                </li>
+        
+                <!-- About Us -->
+                <li class="nav-item" style="margin-right: 50px;">
+                    <a class="nav-link" href="about.html"><b style="color: white;">About Us</b></a>
+                </li>
+        
+                <!-- Contact Us -->
+                <li class="nav-item" style="margin-right: 50px;">
+                    <a class="nav-link" href="contact.html"><b style="color: white;">Contact Us</b></a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    
+    <div class="bannerclass">
+        <div class="banner-wrapper">
+            <div class="boom1">
+                <img src="1.webp" alt="" style="height: 700px; width: 100%;">
+            </div>
+            <div class="boom1">
+                <img src="2.webp" alt="" style="height: 700px; width: 100%;">
+            </div>
+            <div class="boom1">
+                <img src="3.webp" alt="" style="height: 700px; width: 100%;">
+            </div>
+            <div class="boom1">
+                <img src="4.webp" alt="" style="height: 700px; width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.boom1');
+        const totalSlides = slides.length;
+    
+        function carousel() {
+            slideIndex = (slideIndex + 1) % totalSlides; 
+            document.querySelector('.banner-wrapper').style.transform = `translateX(-${slideIndex * 100}%)`;
+            setTimeout(carousel, 5000); 
+        }
+    
+        carousel(); 
+    </script>
+
+    <div class="container-3" style="background-color: rgb(226, 226, 245);">
+        <center>
+            <h1 style="margin-bottom: 30px;"><b>Hands-on Training</b></h1>
+        </center>
+        <div class="cards-wrapper">
+            <div class="card-1">
+                <img src="https://cdn.wallpapersafari.com/86/47/beOFkU.jpg" alt="Card 1">
+                <h2 style="margin-top: 10px;"><b>Python Developer</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/javaDeveloper.jpg" alt="Card 2">
+                <h2 style="margin-top: 10px;"><b>Java Developer</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/sapDeveloper.jpeg" alt="Card 3">
+                <h2 style="margin-top: 10px;"><b>SAP All Modules</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/devops.jpeg" alt="Card 4">
+                <h2 style="margin-top: 10px;"><b>DevOps AWS</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/azure.jpeg" alt="Card 1">
+                <h2 style="margin-top: 10px;"><b>DevOps Azure</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/softwareTesting.jpeg" alt="Card 2">
+                <h2 style="margin-top: 10px;"><b>Software Testing</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/it.jpeg" alt="Card 3">
+                <h2 style="margin-top: 10px;"><b>IT Hardware / Networking / ITIL</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://wallpapercave.com/wp/wp11500504.jpg" alt="Card 4">
+                <h2 style="margin-top: 10px;"><b>Power BI</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/cloud.jpeg" alt="Card 4">
+                <h2 style="margin-top: 10px;"><b>Salesforce Developer</b></h2>
+            </div>
+
+            <!-- Duplicate cards for seamless scroll -->
+            <div class="card-1">
+                <img src="https://cdn.wallpapersafari.com/86/47/beOFkU.jpg" alt="Card 1">
+                <h2 style="margin-top: 10px;"><b>Python Developer</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/javaDeveloper.jpg" alt="Card 2">
+                <h2 style="margin-top: 10px;"><b>Java Developer</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/sapDeveloper.jpeg" alt="Card 3">
+                <h2 style="margin-top: 10px;"><b>SAP All Modules</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/devops.jpeg" alt="Card 4">
+                <h2 style="margin-top: 10px;"><b>DevOps AWS</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/azure.jpeg" alt="Card 1">
+                <h2 style="margin-top: 10px;"><b>DevOps Azure</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/softwareTesting.jpeg" alt="Card 2">
+                <h2 style="margin-top: 10px;"><b>Software Testing</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/it.jpeg" alt="Card 3">
+                <h2 style="margin-top: 10px;"><b>IT Hardware / Networking / ITIL</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://wallpapercave.com/wp/wp11500504.jpg" alt="Card 4">
+                <h2 style="margin-top: 10px;"><b>Power BI</b></h2>
+            </div>
+            <div class="card-1">
+                <img src="https://www.mindloads.in/images/training/cloud.jpeg" alt="Card 4">
+                <h2 style="margin-top: 10px;"><b>Salesforce Developer</b></h2>
+            </div>
+
+
+        </div>
+    </div>
+
+    <center>
+        <h1 style="margin-top: 30px; color: #000000;"><b>Services</b></h1>
+    </center>
+
+    <div class="container">
+        <div class="box">
+            <div class="icon"><i class="fas fa-search"></i></div>
+            <h3>Job Seeker</h3>
+            <p>Candidate looking for jobs</p>
+            <a href="placements.html" class="btn">Click now</a>
+        </div>
+        <div class="box">
+            <div class="icon"><i class="fas fa-briefcase"></i></div>
+            <h3>Business Tie up</h3>
+            <p>Employers looking for Candidates</p>
+            <a href="contact.html" class="btn">Click now</a>
+        </div>
+    </div><br>
+
+
+
+    <div class="main-container">
+        <div class="image-container">
+            <img src="https://cdn-ikplgid.nitrocdn.com/CBnPWTxXvlQldqPwhUtLUzGDtuHrPyuF/assets/images/optimized/rev-1b4aa66/www.careercomfort.co.in/wp-content/uploads/2021/10/about-new-img.png"
+                alt="Image" class="image">
+        </div>
+        <div class="text-container">
+            <h2 style="font-size: 30px;">Future Path IT Solutions</h2>
+            <p> Future Path IT Solutions is a Job Consultancy and Recruitment Agency having specialization in reducing
+                the clutter
+                and streamline the manpower hunting for the companies no matter how Big or Small. We provide end to end
+                hiring solutions. Thus, acting as a Platform. We bridge the gap between the leading companies and the
+                Career Aspirants. We act as a link between Companies that offer Jobs in various areas and the Job
+                seekers. We also act as a guide to the Job searchers and help them with their Career prospects. We have
+                our expertise in this domain to offer specific solutions for different needs and purposes to both
+                Employers as well as Prospective Candidates. </p>
+            <a href="about.html" class="btn">Read More</a>
+        </div>
+    </div><br>
+
+    <center><b>
+            <h1 style="margin-top: 50px;margin-bottom: 50px; color: white;;"><b>Industries We Cater</b></h1>
+        </b>
+    </center>
+    <div class="container-1">
+        <div class="card">
+            <img src="https://www.mindloads.in/images/job/android.jpeg" alt="Android App Development">
+            <p>Android App Development</p>
+        </div>
+        <div class="card">
+            <img src="https://www.mindloads.in/images/job/web.jpeg" alt="Enterprise Web Apps">
+            <p>Enterprise Web Apps</p>
+        </div>
+        <div class="card">
+            <img src="https://www.mindloads.in/images/job/ai.jpeg" alt="AI & Data Science">
+            <p>AI & Data Science</p>
+        </div>
+        <div class="card">
+            <img src="https://www.mindloads.in/images/job/iot.jpeg" alt="IOT Engineering">
+            <p>IOT Engineering</p>
+        </div>
+
+    </div>
+    <div class="container-2">
+        <div class="card">
+            <img src="https://www.mindloads.in/images/job/cloud.jpeg" alt="Virtualization & Cloud">
+            <p>Virtualization & Cloud</p>
+        </div>
+        <div class="card">
+            <img src="https://www.mindloads.in/images/job/support.jpeg" alt="Product Support">
+            <p>Product Support</p>
+        </div>
+        <div class="card">
+            <img src="https://www.mindloads.in/images/job/product.png" alt="Product Development">
+            <p>Product Development</p>
+        </div>
+        <div class="card">
+            <img src="https://www.mindloads.in/images/job/devOps.jpeg" alt="High Performance Devops">
+            <p>High Performance Devops</p>
+        </div>
+
+    </div>
+    <script>
+        const container1 = document.querySelector('.container-1'); /* Renamed container */
+
+        industries.forEach(industry => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const img = document.createElement('img');
+            img.src = industry.icon;
+            img.alt = industry.name;
+
+            const p = document.createElement('p');
+            p.textContent = industry.name;
+
+            card.appendChild(img);
+            card.appendChild(p);
+
+            container1.appendChild(card); /* Renamed container */
+        });
+
+        // Select the navbar
+    </script>
+
+
+
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="logo.png" alt="Career Comfort Logo" class="logo">
+                    <p>
+                        India's best Job Consultancy and Recruitment Agency offering both work-from-home and office
+                        jobs. Find the best jobs for yourself or hire employees for your company with the help of our
+                        professionals.
+                    </p>
+
+                    <h5 style="margin-top: 20px;">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+                        <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+
+                        <a href="https://wa.me/8618151740" class="fab fa-whatsapp" aria-label="WhatsApp"></a>
+                        <a href="mailto:m8970652@gmail.com" class="fas fa-envelope" aria-label="Gmail"></a>
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left: 7%;">
+                    <h5>Job Guaranteed Courses</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check"></i> Java Developer </li>
+                        <li><i class="fas fa-check"></i> Software Testing </li>
+                        <li><i class="fas fa-check"></i> DevOps </li>
+                        <li><i class="fas fa-check"></i> SAP </li>
+                        <li><i class="fas fa-check"></i> Networking </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/9Mn5bxyLG1hCv3c76">No
+                            112, 1st floor, Shirdi Sai Nagar, RK Hegde Nagar, Bengaluru, Karnataka, India,
+                            560077.</a></li>
+                        <li><i> </i>   &nbsp;</li>
+                        <li><i class="fas fa-phone"></i> +91 86181 51740
+                        </li>
+                        <li><i class="fas fa-envelope"></i> <a
+                                href="mailto:careers@futurepathitsolution.com">careers@futurepathitsolution.com</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <p>&copy; 2025 Future Path IT Solutions. All rights reserved.</p>
+        </div>
+    </div>
+    <script>
+        // Select all the cards
+        const cards = document.querySelectorAll('.card');
+
+        // Observer options
+        const options = {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+        };
+
+        // Intersection Observer callback
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the "show" class to make the card appear
+                    entry.target.classList.add('show');
+                    // Stop observing the current card
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        // Create the Intersection Observer
+        const observer = new IntersectionObserver(observerCallback, options);
+
+        // Observe each card
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
